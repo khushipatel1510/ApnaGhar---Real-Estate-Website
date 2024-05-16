@@ -8,7 +8,7 @@ Area Simulator: This feature allows users to compare and select the best area ou
 
 Filter Search: Users can filter property search results based on various criteria such as location, price range, property type, etc.
 
-Technologies Used
+Technologies Used -
 
 Frontend: HTML, CSS, JavaScript
 Backend: Java, SQL, JDBC
