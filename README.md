@@ -2,18 +2,18 @@ Welcome to our Real Estate Website project repository! This website is designed 
 
 Features -
 
-Budget Management: Users can input their budget constraints and the website will provide options within their specified range.
+1. Budget Management: Users can input their budget constraints and the website will provide options within their specified range.
 
-Area Simulator: This feature allows users to compare and select the best area out of three preferred locations using a simulation tool.
+2. Area Simulator: This feature allows users to compare and select the best area out of three preferred locations using a simulation tool.
 
-Filter Search: Users can filter property search results based on various criteria such as location, price range, property type, etc.
+3. Filter Search: Users can filter property search results based on various criteria such as location, price range, property type, etc.
 
 Technologies Used -
 
-Frontend: HTML, CSS, JavaScript
-Backend: Java, SQL, JDBC
-Server: Apache Tomcat
-Frameworks: Java Servlet
+1. Frontend: HTML, CSS, JavaScript
+2. Backend: Java, SQL, JDBC
+3. Server: Apache Tomcat
+4. Frameworks: Java Servlet
 
 ![image](https://github.com/khushipatel1510/ApnaGhar---Real-Estate-Website/assets/168915185/d915aadb-793d-4bf7-a1af-3337977b1ead)
 
