@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility</title>
+    <link rel="stylesheet" href="eligibility.css">
+</head>
+<body>
+<div class="container">
+        <h1>BUDGET CALCULATOR</h1>
+        
+        <label>Monthly expense </label>
+        <input type="number"name="monthly expense"id="monthlyexpense">
+        <br>
+        <label>Mortgage term</label>
+        <input type="number"name="mortgage term"id="mortgageterm">
+        <br>
+        <label>Interest rate</label>
+        <input type="number"name="interest rate"id="interestrate">
+        <br>
+        <label>Down payment</label>
+        <input type="number"name="down payment"id="downpayment">
+        <br>
+        <label>Budget*</label>
+        <input type="number"name="Budget"id="monthlybudget" disabled>
+        <br>
+        <button onclick="tipcalcy()">Calculate</button>
+        </div>
+        <div class="cont2">
+        <h1>DTI CALCULATOR</h1>
+        <label>debt</label>
+        <input type="number"name="Dept"id="debt" >
+        <br>
+        <label>Monthly income</label>
+        <input type="number"name="monthly income"id="monthlyincome">
+        <br>
+        <label>DTI ratio*</label>
+        <input type="number"name="DTI"id="dti" disabled>
+        <br>
+        <button onclick="tipcal()">Calculate</button>
+        </div>
+        <script src="eligibility.js"></script>
+</body>
+</html>

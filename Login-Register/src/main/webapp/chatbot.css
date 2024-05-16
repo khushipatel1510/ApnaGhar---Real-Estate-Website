@@ -1,0 +1,80 @@
+@charset "ISO-8859-1";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center; /* center the chatbot horizontally */
+	align-items: center; /* center the chatbot vertically */
+	height: 100vh; /* set the body height to the full viewport height */
+	background-image: url("https://miro.medium.com/max/3000/1*fvS3aQ96_ZsgzGrZHKXJQA.gif"); /* set the background image */
+	background-size: cover; /* make the image cover the entire background */
+}
+
+#chat-form {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#user-message {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+.chat-container {
+	width: 600px;
+	height: 500px;
+	margin: 50px auto;
+	border: 2px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.chat-header {
+	background-color: #8800ff;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+.chat-box {
+	height: 400px;
+	padding: 10px;
+	overflow-y: scroll;
+}
+
+.chat-message {
+	margin-bottom: 20px;
+}
+
+.chat-message p {
+	background-color: #f0f0f0;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	max-width: 70%;
+}
+
+.chat-message p.bot-message {
+	background-color: #d900ff;
+	color: white;
+}
+
+.send-button {
+    background-color: #e600ff;
+    color: white;
+    border: none;
+    padding: 5px 30px; /* reduce the height of the button */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+	background-color: #009acd;
+}

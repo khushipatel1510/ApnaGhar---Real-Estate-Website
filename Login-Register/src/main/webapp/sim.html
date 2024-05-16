@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Best Area Recommendation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      select {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 2px 5px rgb(246, 237, 237);
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      button {
+        padding: 20px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      #message {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      body {
+    background-image: url("https://wonderfulengineering.com/wp-content/uploads/2014/01/building-wallpaper-8.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+  }
+  
+  .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  
+}
+
+/* add class "container" to the body tag */
+body.container {
+  margin: 0;
+  padding: 0;
+}
+
+    </style>
+  </head>
+  <style>
+    body {
+      color: white;
+    }
+  </style>
+</head>
+<body class="container">
+    ...
+  </body>
+  
+  <body>
+    <p>Select a BHK configuration:</p>
+    <select id="bhk">
+      <option value="1">1 BHK</option>
+      <option value="2">2 BHK</option>
+      <option value="3">3 BHK</option>
+    </select>
+    <p>Select three preferred areas:</p>
+    <select id="area1">
+      <option value="Baner">Baner</option>
+      <option value="Poonawale">Poonawale</option>
+      <option value="Hinjewadi">Hinjewadi</option>
+      <option value="Wakad">Wakad</option>
+      <option value="Wagholi">Wagholi</option>
+      <option value="Mahalunge">Mahalunge</option>
+      <option value="Hadapsar">Hadapsar</option>
+      <option value="Bavdhan">Bavdhan</option>
+      <option value="Manjri">Manjini</option>
+      <option value="Aundh">Aundh</option>
+    </select>
+    <select id="area2">
+      <option value="Baner">Baner</option>
+      <option value="Poonawale">Poonawale</option>
+      <option value="Hinjewadi">Hinjewadi</option>
+      <option value="Wakad">Wakad</option>
+      <option value="Wagholi">Wagholi</option>
+      <option value="Mahalunge">Mahalunge</option>
+      <option value="Hadapsar">Hadapsar</option>
+      <option value="Bavdhan">Bavdhan</option>
+      <option value="Manjri">Manjini</option>
+      <option value="Aundh">Aundh</option>
+    </select>
+    <select id="area3">
+      <option value="Baner">Baner</option>
+      <option value="Poonawale">Poonawale</option>
+      <option value="Hinjewadi">Hinjewadi</option>
+      <option value="Wakad">Wakad</option>
+      <option value="Wagholi">Wagholi</option>
+      <option value="Mahalunge">Mahalunge</option>
+      <option value="Hadapsar">Hadapsar</option>
+      <option value="Bavdhan">Bavdhan</option>
+      <option value="Manjri">Manjini</option>
+      <option value="Aundh">Aundh</option>
+    </select>
+    <button onclick="recommendArea()">Recommend</button>
+    <div id="message"></div>
+    <script>
+      
+      const areasData = [
+  { name: "Baner",  bhkAvailability: [1, 2, 3], distanceToCity: 1.35 },
+  { name: "Poonawale", bhkAvailability: [1, 2, 3], distanceToCity: -0.95  },
+  { name: "Hinjewadi", bhkAvailability: [1, 2, 3], distanceToCity:-3.28 },
+  { name: "Wakad",  bhkAvailability: [1, 2, 3], distanceToCity: 0.79 },
+  { name: "Wagholi", bhkAvailability: [1, 2, 3], distanceToCity: -4.21 },
+  { name: "Mahalunge",  bhkAvailability: [1, 2, 3], distanceToCity: 4.25 },
+  { name: "Hadapsar", bhkAvailability: [1, 2, 3], distanceToCity: 7.89 },
+  { name: "Bavdhan", bhkAvailability: [1, 2, 3], distanceToCity: 2.21 },
+  { name: "Manjri", bhkAvailability: [1, 2, 3], distanceToCity:  -1.9},
+  { name: "Aundh", bhkAvailability: [1, 2, 3], distanceToCity: 0 }
+];
+
+function recommendArea() {
+  const bhk = document.getElementById("bhk").value;
+  const area1 = document.getElementById("area1").value;
+  const area2 = document.getElementById("area2").value;
+  const area3 = document.getElementById("area3").value;
+
+  const preferredAreas = [area1, area2, area3];
+  let availableAreas = [];
+
+  for (let i = 0; i < areasData.length; i++) {
+    const area = areasData[i];
+    const isPreferred = preferredAreas.includes(area.name);
+    const isAvailable = area.bhkAvailability.includes(parseInt(bhk));
+
+    if (isPreferred && isAvailable) {
+      availableAreas.push(area);
+    }
+  }
+
+  if (availableAreas.length === 0) {
+    document.getElementById("message").innerHTML = "No areas available with the selected BHK configuration in the preferred areas.";
+    return;
+  }
+
+  let recommendedArea = availableAreas[0];
+  for (let i = 1; i < availableAreas.length; i++) {
+    const area = availableAreas[i];
+    if (area.distanceToCity > recommendedArea.distanceToCity) {
+      recommendedArea = area;
+    }
+  }
+
+  document.getElementById("message").innerHTML = "AREA : " + recommendedArea.name;
+}
+
+
+</script>
+</html>

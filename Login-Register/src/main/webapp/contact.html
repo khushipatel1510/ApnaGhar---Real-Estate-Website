@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" >
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact</title>
+</head>
+<body>
+<section class="contact">
+        <div class="row">
+            <div class="image">
+                <img src="https://th.bing.com/th?id=OIP.hJawN3feX1yE_v2MssF6bQHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"alt="">
+    
+            </div>
+            <form  action="" method="host" onsubmit="sendEmail(); reset(); return false;">
+                <h3>get in touch</h3>
+                <input type="text"name="name"id="name"required maxlength="50"placeholder="enter your name" class="box">
+                <input type="email"name="email"id="email"required maxlength="50"placeholder="enter your email" class="box">
+                <input type="number"name="number"id="phone"required maxlength="10"max="999999999"min="0"placeholder="enter your number" class="box">
+                <textarea name="message" placeholder="enter your message"required maxlength="1000"id="" cols="30" rows="10" class="box"></textarea>
+                <input type="submit"value="send message" id="send-button" name="send message"class="box">
+            </form>
+        </div>
+    </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    var btn=document.getElementById("send-button");
+    var name=document.getElementById("name");
+    var email=document.getElementBId("email");
+    var number=document.getElementById("phone");
+    btn.addEventListener('click',function(e){
+    e.preventDefault();
+    Email.send({
+    SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+    Host : "smtp.gmail.com",
+    From : "shivam.kandalkar.btech2021@sitpune.edu.in",
+   
+    Username : "shivam.kandalkar.btech2021@sitpune.edu.in",
+    Password : "6DDAE127897FB11B63DE624674E6C3CF6EA6",
+    To : "shivam.kandalkar.btech2021@sitpune.edu.in",
+    From : document.getElementById("email").value,
+    Subject : "This is the subject",
+    Body : "And this is the bod"
+}).then(
+  message => alert("Message sent successfully")
+);
+ });
+
+</script>
+</body>
+</html>
